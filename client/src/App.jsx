@@ -1,13 +1,22 @@
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+
+import Footer from './components/footer/Footer.jsx'
+import Header from './components/header/Header.jsx'
+import Home from './components/home/Home.jsx'
+import Teams from './components/teams/Teams.jsx';
 
 function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/teams' element={<Teams />} />
+      </Routes>
+  
+      <Footer />
     </>
   )
 }
