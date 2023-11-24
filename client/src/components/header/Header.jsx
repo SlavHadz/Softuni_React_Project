@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -17,7 +16,7 @@ export default function Header() {
                         <Link to={'/teams'} className={styles['nav-link']}>Teams</Link>                        
                     </li>
                     <li className={styles['nav-item']}>                        
-                        <Link to={'/create-team'} className={styles['nav-link']}>Create Team</Link>
+                        <Link to={'/teams/create'} className={styles['nav-link']}>Create Team</Link>
                     </li>
                     <li className={styles['nav-item']}>                        
                         <Link to={'/about'} className={styles['nav-link']}>About</Link>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as teamsService from '../../services/teamsService.js';
-import TeamItem from "../teamItem/TeamItem.jsx";
+import TeamItem from "../team-item/TeamItem.jsx";
 
 export default function Teams() {
     const [teams, setTeams] = useState([]);
