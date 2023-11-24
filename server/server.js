@@ -1339,7 +1339,16 @@
     	}
     };
     var seedData = {
-        teams: {},
+        teams: {
+            "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                name: "Wellington Phoenix",
+                ground: "Sky Stadium",
+                league: "Australian A-League",
+                mainImage: "https://backend.wellingtonphoenix.com/wp-content/uploads/sites/11/2017/09/xekp4b9zfszh1qp19p743s3mp.jpg",
+                crestImage: "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Wellington_Phoenix_FC_logo.svg/800px-Wellington_Phoenix_FC_logo.svg.png"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",

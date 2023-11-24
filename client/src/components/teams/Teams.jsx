@@ -5,16 +5,16 @@ export default function Teams() {
     const [teams, setTeams] = useState([]);
 
     useEffect(() => {
+        console.log("Called use effect");
         teamsService
         .getAll()
-        .then(res => res.json())
-        .then(teams => setTeams(teams));
+        .then(teamsResult => setTeams(Object.values(teamsResult)));
     }, []);
 
     return (
         <div>
             Teams list:
-            {teams.map(team => { <div>{team.name}</div> })}
+            {teams.map(team => (<div key={1}>{team.name}</div>))}
         </div>
     );
 }
