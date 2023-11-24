@@ -11,25 +11,25 @@ export default function Header() {
             <nav className={styles.nav}>
                 <ul className={styles['nav-list']}>
                     <li className={styles['nav-item']}>
-                        <Link to={'/'}>Home</Link>                       
+                        <Link to={'/'} className={styles['nav-link']}>Home</Link>                       
                     </li>
                     <li className={styles['nav-item']}>
-                        <Link to={'/teams'}>Teams</Link>                        
+                        <Link to={'/teams'} className={styles['nav-link']}>Teams</Link>                        
                     </li>
                     <li className={styles['nav-item']}>                        
-                        <Link to={'/create-team'}>Create Team</Link>
+                        <Link to={'/create-team'} className={styles['nav-link']}>Create Team</Link>
                     </li>
                     <li className={styles['nav-item']}>                        
-                        <Link to={'/about'}>About</Link>
+                        <Link to={'/about'} className={styles['nav-link']}>About</Link>
                     </li>
                     <li className={styles['nav-item']}>                        
-                        <Link to={'/register'}>Register</Link>
+                        <Link to={'/register'} className={styles['nav-link']}>Register</Link>
                     </li>
                     <li className={styles['nav-item']}>                        
-                        <Link to={'/login'}>Login</Link>
+                        <Link to={'/login'} className={styles['nav-link']}>Login</Link>
                     </li>
                     <li className={styles['nav-item']}>               
-                        <Link to={'/logout'}>Logout</Link>
+                        <Link to={'/logout'} className={styles['nav-link']}>Logout</Link>
                     </li>
                 </ul>
             </nav>
