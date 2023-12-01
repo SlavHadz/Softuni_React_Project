@@ -1,31 +1,21 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../contexts/authContext.jsx";
+import useForm from "../../hooks/useForm.js";
 
 export default function Register() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const changeEmailHandler = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const changePasswordHandler = (e) => {
-        setPassword(e.target.value);
-    }
-
     const { submitRegisterHandler } = useContext(AuthContext);
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        submitRegisterHandler(email, password);
-    }
+    const { formValues, onSubmit, onChange } = useForm({
+        email: '',
+        password: ''
+    }, submitRegisterHandler);
 
     return (
         <form onSubmit={onSubmit}>
             <label htmlFor="name">Email:</label>
-            <input name="name" type="text" value={email} onChange={changeEmailHandler}/>
+            <input name="email" type="text" value={formValues.email} onChange={onChange}/>
             <label htmlFor="ground">Password:</label>
-            <input name="ground" type="text" value={password} onChange={changePasswordHandler}/>
+            <input name="password" type="text" value={formValues.password} onChange={onChange}/>
             <button type="submit">Register</button>
         </form>
     );
