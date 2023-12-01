@@ -8,6 +8,7 @@ import CreateTeam from './components/create-team/CreateTeam.jsx';
 import { AuthProvider } from './contexts/authContext.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
+import Logout from './components/logout/Logout.jsx';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/teams/create' element={<CreateTeam />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/logout' element={<Logout />} />
       </Routes>
   
       <Footer />

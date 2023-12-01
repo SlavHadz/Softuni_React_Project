@@ -4,12 +4,6 @@ async function request(method, url, data) {
         headers: {}
     };
 
-    // const userData = getUserData();
-    // if(userData) {
-    //     const token = userData.accessToken;
-    //     options.headers['X-Authorization'] = token;
-    // }
-
     if(data !== undefined) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
