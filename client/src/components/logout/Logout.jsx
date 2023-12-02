@@ -12,5 +12,5 @@ export default function Logout() {
         authService.logout()
         .then(() => logoutHandler())
         .catch(() => navigate('/'));
-    }, [navigate, logoutHandler]);
+    }, []);
 }

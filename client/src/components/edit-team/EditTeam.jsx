@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm.js';
 import * as teamService from '../../services/teamsService.js';
 
-export default function CreateTeam() {
+export default function EditTeam() {
     const navigate = useNavigate();
 
     const submitFormHandler = async (formValues) => {
@@ -31,7 +31,7 @@ export default function CreateTeam() {
             <input name="mainImage" type="text" value={formValues.mainImage} onChange={onChange}/>
             <label htmlFor="team-logo">Team logo:</label>
             <input name="teamLogo" type="text" value={formValues.teamLogo} onChange={onChange}/>
-            <button type="submit">Create</button>
+            <button type="submit">Edit</button>
         </form>
     );
 }

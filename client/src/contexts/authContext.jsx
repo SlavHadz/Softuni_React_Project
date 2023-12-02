@@ -11,21 +11,25 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = useState({});
 
-    const submitLoginHandler = async (username, password) => {
-        const result = await authService.login(username, password);
+    const submitLoginHandler = async (formData) => {
+        const { email, password } = formData;
+        const result = await authService.login(email, password);
         setAuth(result);
+        localStorage.setItem('token', result.accessToken);
         navigate('/');
     }
 
-    const submitRegisterHandler = async (username, password) => {
-        const result = await authService.register(username, password);
+    const submitRegisterHandler = async (formData) => {
+        const { email, password } = formData;
+        const result = await authService.register(email, password);
         setAuth(result);
+        localStorage.setItem('token', result.accessToken);
         navigate('/');
     }
 
     const logoutHandler = async () => {
-        await authService.logout();
         setAuth({});
+        localStorage.removeItem('token');
         navigate('/');
     }
     

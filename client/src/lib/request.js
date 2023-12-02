@@ -9,26 +9,26 @@ async function request(method, url, data) {
         options.body = JSON.stringify(data);
     }
 
-    try {
-        const response = await fetch(url, options);
-        let result;
-        if(response.status !== 204) {
-            result = await response.json();
-        }
-
-        if(response.ok == false) {
-            if(response.status === 403) {
-                console.log("Do something");
-            }
-            const error = result;
-            throw error;
-        }
-
-        return result;
-    } catch(err) {
-        alert(err.message);
-        throw err;
+    const accessToken = localStorage.getItem('token');
+    if(accessToken) {
+        options.headers['X-Authorization'] = accessToken;
     }
+
+    //TODO: Review logic
+    const response = await fetch(url, options);
+
+    if(response.status === 204) {
+        return {}
+    }
+
+    const result = await response.json();
+
+    if(response.ok === false) {
+        throw result;
+    }
+
+    return result;
+
 }
 
 export const get = request.bind(null, 'get');
