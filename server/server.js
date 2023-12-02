@@ -1350,6 +1350,24 @@
                 _id: "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9"
             }
         },
+        players: {
+            "f668551c-9149-11ee-b9d1-0242ac120002": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9",
+                _id: "f668551c-9149-11ee-b9d1-0242ac120002",
+                firstName: "Bozhidar",
+                lastName: "Kraev",
+                position: "Forward/Second Striker"
+            },
+            "f668551c-9149-11ee-basdf-0242ac120002": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "e968a4ea-0123-4699-8d89-b83b1a5d58f9",
+                _id: "f668551c-9149-11ee-basdf-0242ac120002",
+                firstName: "Anton",
+                lastName: "Nedyalkov",
+                position: "Left back"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",

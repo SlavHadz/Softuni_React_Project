@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function TeamItem({
+export default function TeamListItem({
     teamData
 }) {
     return (

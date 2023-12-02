@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import * as teamsService from '../../services/teamsService.js';
-import TeamItem from "../team-item/TeamItem.jsx";
+import * as teamsService from '../../../services/teamsService.js';
+import TeamListItem from "../team-list-item/TeamListItem.jsx";
 
-export default function Teams() {
+
+export default function TeamsList() {
     const [teams, setTeams] = useState([]);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ export default function Teams() {
     return (
         <div>
             Teams list:
-            {teams.map(team => (<TeamItem key={team._id} teamData={team} />))}
+            {teams.map(team => (<TeamListItem key={team._id} teamData={team} />))}
         </div>
     );
 }

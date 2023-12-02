@@ -1,33 +1,23 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import useForm from '../../hooks/useForm.js';
-import * as teamService from '../../services/teamsService.js';
-import { useEffect } from 'react';
+import useForm from '../../../hooks/useForm.js';
+import * as teamService from '../../../services/teamsService.js';
 
-export default function EditTeam() {
+export default function CreateTeam() {
     const navigate = useNavigate();
-    const { teamId } = useParams();
 
     const submitFormHandler = async (formValues) => {
         await teamService.create(formValues)
         navigate('/teams');
     }
 
-    const {formValues, setFormValues, onSubmit, onChange} = useForm({
+    const {formValues, onSubmit, onChange} = useForm({
         name: '',
         ground: '',
         league: '',
         mainImage: '',
         teamLogo: ''
     }, submitFormHandler);
-
-    useEffect(() => {
-        teamService
-        .getOne(teamId)
-        .then(team => {
-            setFormValues(team);
-        });
-    }, [teamId]);
 
     return (
         <form onSubmit={onSubmit}>
@@ -41,7 +31,7 @@ export default function EditTeam() {
             <input name="mainImage" type="text" value={formValues.mainImage} onChange={onChange}/>
             <label htmlFor="team-logo">Team logo:</label>
             <input name="teamLogo" type="text" value={formValues.teamLogo} onChange={onChange}/>
-            <button type="submit">Edit</button>
+            <button type="submit">Create</button>
         </form>
     );
 }

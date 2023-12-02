@@ -12,3 +12,11 @@ export const create = async (teamData) => {
 export const getOne = async (teamId) => {
     return await request.get(`${baseUrl}/${teamId}`);
 }
+
+export const deleteOne = async (teamId) => {
+    return await request.del(`${baseUrl}/${teamId}`);
+}
+
+export const updateOne = async (teamId, teamData) => {
+    return await request.put(`${baseUrl}/${teamId}`, teamData);
+}
