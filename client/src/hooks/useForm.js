@@ -21,6 +21,7 @@ export default function useForm(
 
     return {
         formValues,
+        setFormValues,
         onSubmit,
         onChange
     }

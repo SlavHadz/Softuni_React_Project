@@ -8,3 +8,7 @@ export const getAll = async () => {
 export const create = async (teamData) => {
     return await request.post(baseUrl, teamData);
 }
+
+export const getOne = async (teamId) => {
+    return await request.get(`${baseUrl}/${teamId}`);
+}

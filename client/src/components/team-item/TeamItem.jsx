@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function TeamItem({
     teamData
 }) {
@@ -7,6 +9,7 @@ export default function TeamItem({
             <div>{teamData.name}</div>
             <h2>Ground:</h2>
             <div>{teamData.ground}</div>
+            <Link to={`/teams/${teamData._id}/details`}>Details</Link>
         </>
     );
 }

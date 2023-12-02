@@ -9,6 +9,8 @@ import { AuthProvider } from './contexts/authContext.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
 import Logout from './components/logout/Logout.jsx';
+import TeamDetails from './components/team-details/TeamDetails.jsx';
+import EditTeam from './components/edit-team/EditTeam.jsx';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/teams' element={<Teams />} />
         <Route path='/teams/create' element={<CreateTeam />} />
+        <Route path='/teams/:teamId/details' element={<TeamDetails />} />
+        <Route path='/teams/:teamId/edit' element={<EditTeam />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/logout' element={<Logout />} />
