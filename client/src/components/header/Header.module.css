@@ -1,6 +1,8 @@
+@import '../../../public/css/constants.css';
+
 .header {
     border-bottom: 1px solid black;
-    background-color: #363030;
+    background-color: var(--primary-bg-color);
     min-height: 4rem;
 }
 
@@ -36,6 +38,6 @@
 }
 
 .nav-link {
-    color: rgb(250, 229, 196);
+    color: var(--primary-text-color);
     text-decoration: none;
 }

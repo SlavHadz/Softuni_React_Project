@@ -1,0 +1,24 @@
+@import '../../../public/css/constants.css';
+
+.footer {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20rem;
+}
+
+.footer__text-logo {
+    font-size: 2rem;
+}
+
+.socials {
+    color: var(--primary-text-color);
+}
+
+.socials i {
+    color: white;
+    cursor: pointer;
+    margin-right: 1rem;
+}

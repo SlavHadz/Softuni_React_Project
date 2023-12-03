@@ -9,7 +9,7 @@ export default function TeamsList() {
     useEffect(() => {
         teamsService
         .getAll()
-        .then(teamsResult => setTeams(Object.values(teamsResult)));
+        .then(teamsResult => setTeams(teamsResult));
     }, []);
 
     return (

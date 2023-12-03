@@ -7,6 +7,17 @@ export const getByTeamId = async (teamId) => {
         where: `teamId="${teamId}"`
     });
 
-    const result = await request.get(`${baseUrl}?${queryString}`);
-    console.log(result);
+    return await request.get(`${baseUrl}?${queryString}`);
+}
+
+export const create = async (playerData) => {
+    return await request.post(baseUrl, playerData);
+}
+
+export const deleteById = async (playerId) => {
+    await request.del(`${baseUrl}/${playerId}`);
+}
+
+export const updatePlayer = async (playerId, playerData) => {
+    await request.put(`${baseUrl}/${playerId}`, playerData);
 }
