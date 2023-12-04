@@ -13,23 +13,25 @@ import EditTeam from './components/team/edit-team/EditTeam.jsx';
 import TeamsList from './components/team/teams-list/TeamsList.jsx';
 import CreateTeam from './components/team/create-team/CreateTeam.jsx';
 
+import styles from './App.module.css';
+
 function App() {
 
   return (
     <AuthProvider>
       <Header />
-
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/teams' element={<TeamsList />} />
-        <Route path='/teams/create' element={<CreateTeam />} />
-        <Route path='/teams/:teamId/details' element={<TeamDetails />} />
-        <Route path='/teams/:teamId/edit' element={<EditTeam />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/logout' element={<Logout />} />
-      </Routes>
-  
+      <div className={styles.main}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/teams' element={<TeamsList />} />
+          <Route path='/teams/create' element={<CreateTeam />} />
+          <Route path='/teams/:teamId/details' element={<TeamDetails />} />
+          <Route path='/teams/:teamId/edit' element={<EditTeam />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/logout' element={<Logout />} />
+        </Routes>
+      </div>
       <Footer />
     </AuthProvider>
   )
