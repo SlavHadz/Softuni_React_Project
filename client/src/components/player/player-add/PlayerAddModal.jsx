@@ -3,6 +3,8 @@ import * as playerService from '../../../services/playerService.js';
 
 import styles from './PlayerAddModal.module.css';
 
+import { Form, Button } from 'react-bootstrap';
+
 
 export default function PlayerAddModal({
     teamId,
@@ -23,16 +25,24 @@ export default function PlayerAddModal({
     return (
         <>
             <div className={styles.modal__body}>
-                <form onSubmit={onSubmit}>
-                    <label htmlFor="league">First Name:</label>
-                    <input name="firstName" type="text" value={formValues.firstName} onChange={onChange}/>
-                    <label htmlFor="main-image">Last Name:</label>
-                    <input name="lastName" type="text" value={formValues.lastName} onChange={onChange}/>
-                    <label htmlFor="team-logo">Position:</label>
-                    <input name="position" type="text" value={formValues.position} onChange={onChange}/>
-                    <button type="submit">Create</button>
-                    <button onClick={closeHandler}>Close</button>
-                </form>
+                <Form onSubmit={onSubmit}>
+                    <Form.Group className="mb-3" controlId="firstName">
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control name="firstName" type="text" value={formValues.firstName} onChange={onChange}/>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="lastName">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control name="lastName" type="text" value={formValues.lastName} onChange={onChange}/>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="position">
+                        <Form.Label>Position</Form.Label>
+                        <Form.Control name="position" type="text" value={formValues.position} onChange={onChange}/>
+                    </Form.Group>
+                    <div className={styles.btn__container}>
+                        <Button type="submit" variant="success">Create</Button>
+                        <Button onClick={closeHandler} variant="light">Cancel</Button>
+                    </div>
+                </Form>
             </div>
             <div onClick={closeHandler} className={styles.backdrop}></div>
         </>
