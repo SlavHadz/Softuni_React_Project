@@ -37,7 +37,8 @@ export const AuthProvider = ({
         submitLoginHandler,
         submitRegisterHandler,
         logoutHandler,
-        isAuthenticated: !!auth.accessToken
+        isAuthenticated: !!auth.accessToken,
+        userId: auth._id
     }
 
     return (

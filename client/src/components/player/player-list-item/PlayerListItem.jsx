@@ -1,16 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import * as playerService from '../../../services/playerService.js';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PlayerTransferModal from "../player-transfer/PlayerTransferModal.jsx";
 import DeleteConfirmationModal from "../../common/delete-confirmation-modal/DeleteConfirmationModal.jsx";
+import AuthContext from "../../../contexts/authContext.jsx";
 
 export default function PlayerListItem({
     playerData
 }) {
-    const {_id, teamId, firstName, lastName, position} = playerData;
+    const {_id, _ownerId, teamId, firstName, lastName, position} = playerData;
     const navigate = useNavigate();
     const [showTransfer, setShowTransfer] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
+    const { userId } = useContext(AuthContext);
 
     const clickTransferHandler = () => {
         setShowTransfer(true);
@@ -34,12 +36,18 @@ export default function PlayerListItem({
         setShowDelete(false);
     }
 
+    const isOwner = () => _ownerId === userId;
+
     return (
         <>
             <h1>Name: {firstName} {lastName}</h1>
             <h2>Position: {position}</h2>
-            <button onClick={clickDeleteBtnHandler}>Delete</button>
-            <button onClick={clickTransferHandler}>Transfer</button>
+            { isOwner() &&
+                <>
+                <button onClick={clickDeleteBtnHandler}>Delete</button>
+                <button onClick={clickTransferHandler}>Transfer</button>
+                </>
+            }
 
             {showTransfer && <PlayerTransferModal closeModalHandler={closeTransferModalHandler} playerData={playerData} />}
 
