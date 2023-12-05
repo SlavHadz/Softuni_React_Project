@@ -1,0 +1,30 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    z-index: 100;
+    background-color: rgb(255, 226, 226);
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    opacity: 0.9;
+}

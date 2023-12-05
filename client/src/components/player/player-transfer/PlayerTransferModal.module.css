@@ -1,0 +1,70 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    z-index: 100;
+    background-color: rgb(191, 255, 216);
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 50px 20px;
+    opacity: 0.9;
+}
+
+.modal__body form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100%;
+}
+
+.player__title {
+    margin-bottom: 20px;
+}
+
+.button__container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button__container button {
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button__danger {
+    background-color: rgb(247, 160, 160);
+    border: 1px solid red;
+}
+
+.button__danger:hover {
+    background-color: rgb(253, 126, 126);
+}
+
+.button__close {
+    color: white;
+    background-color: rgb(96, 154, 213);
+    border: 1px solid black;
+}
+
+.button__close:hover {
+    background-color: rgb(38, 82, 127);
+}

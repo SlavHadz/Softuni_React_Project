@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import * as playerService from '../../../services/playerService.js';
 import PlayerListItem from "../../player/player-list-item/PlayerListItem.jsx";
-import PlayerAdd from "../../player/player-add/PlayerAdd.jsx";
+import PlayerAddModal from "../../player/player-add/PlayerAddModal.jsx";
 
 export default function TeamSquadList({
     teamId
@@ -33,7 +33,7 @@ export default function TeamSquadList({
                 { playersList.map(player => <PlayerListItem key={player._id} playerData={player} />) }
             </div>
             <button onClick={clickAddHandler}>Add Player</button>
-            {showAdd && <PlayerAdd teamId={teamId} closeHandler={closeAddModalHandler} />}
+            {showAdd && <PlayerAddModal teamId={teamId} closeHandler={closeAddModalHandler} />}
         </>
     );
 }

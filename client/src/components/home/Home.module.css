@@ -1,0 +1,8 @@
+@import url('../../../public/css/constants.css');
+
+.main__text {
+    font-family: 'Salsa', cursive;
+    text-align: center;
+    color: var(--primary-text-color);
+    padding-top: 100px;
+}

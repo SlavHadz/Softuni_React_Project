@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import * as teamsService from '../../../services/teamsService.js';
 import * as playerService from '../../../services/playerService.js';
 
+import styles from './PlayerTransferModal.module.css';
+
 export default function PlayerTransferModal({
     closeModalHandler,
     playerData
@@ -31,15 +33,23 @@ export default function PlayerTransferModal({
     }
 
     return (
-        <div>
-            <form onSubmit={onTransferHandler}>
-                <label>Transfer To:</label>
-                <select value={selectedTeam} onChange={changeSelectedTeamHandler}>
-                    {availableTeams.map(team => (<option value={team._id} key={team._id}>{team.name}</option>))}
-                </select>
-                <button type="submit">Transfer</button>
-                <button onClick={closeModalHandler}>Cancel</button>
-            </form>
-        </div>
+        <>
+            <div className={styles.modal__body}>
+                <form onSubmit={onTransferHandler}>
+                    <div>
+                        <h3 className={styles.player__title}>{`${playerData.firstName} ${playerData.lastName}`}</h3>
+                        <label>Transfer To:</label>
+                        <select value={selectedTeam} onChange={changeSelectedTeamHandler}>
+                            {availableTeams.map(team => (<option value={team._id} key={team._id}>{team.name}</option>))}
+                        </select>
+                    </div>
+                    <div className={styles.button__container}>
+                        <button type="submit" className={styles.button__danger}>Transfer</button>
+                        <button onClick={closeModalHandler} className={styles.button__close}>Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <div onClick={closeModalHandler} className={styles.backdrop}></div>
+        </>
     );
 }
