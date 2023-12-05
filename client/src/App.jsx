@@ -14,6 +14,7 @@ import TeamsList from './components/team/teams-list/TeamsList.jsx';
 import CreateTeam from './components/team/create-team/CreateTeam.jsx';
 
 import styles from './App.module.css';
+import AuthGuard from './components/guards/AuthGuard.jsx';
 
 function App() {
 
@@ -24,12 +25,15 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/teams' element={<TeamsList />} />
-          <Route path='/teams/create' element={<CreateTeam />} />
           <Route path='/teams/:teamId/details' element={<TeamDetails />} />
-          <Route path='/teams/:teamId/edit' element={<EditTeam />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/logout' element={<Logout />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path='/teams/create' element={<CreateTeam />} />
+            <Route path='/teams/:teamId/edit' element={<EditTeam />} />
+            <Route path='/logout' element={<Logout />} />
+          </Route>
         </Routes>
       </div>
       <Footer />
