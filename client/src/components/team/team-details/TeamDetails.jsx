@@ -5,6 +5,9 @@ import * as teamService from '../../../services/teamsService.js';
 import TeamSquadList from "../team-squad-list/TeamSquadList.jsx";
 import DeleteConfirmationModal from "../../common/delete-confirmation-modal/DeleteConfirmationModal.jsx";
 import AuthContext from "../../../contexts/authContext.jsx";
+import styles from "./TeamDetails.module.css";
+
+import Button from 'react-bootstrap/Button';
 
 export default function TeamDetails() {
     const navigate = useNavigate();
@@ -43,26 +46,36 @@ export default function TeamDetails() {
 
     return (
         <>
+        <div className={styles.details__container}>
             <div>
-                <h1>{team.name}</h1>
-                <h2>Ground: {team.ground}</h2>
-                <h2>League: {team.league}</h2>
-                <img src={team.mainImage} />
-                { isOwner() &&
-                    <>
-                        <Link to={`/teams/${teamId}/edit`} >Edit</Link>
-                        <button onClick={clickDeleteBtnHandler}>Delete</button>
-                    </>
-                }
-                <button onClick={toggleSquadList}>Squad list</button>
-                {showSquad && <TeamSquadList teamOwnerId={team._ownerId} teamId={teamId} />}
+                <div className={styles.team_photo__container}>
+                    <img src={team.mainImage} className={styles.team_photo__img} />
+                </div>
             </div>
-            {showDelete && <DeleteConfirmationModal
-                itemId={teamId}
-                itemName={team.name}
-                closeHandler={closeDeleteModal}
-                confirmHandler={deleteTeamHandler}
-            />}
+            <div className={styles.details__right}>
+                <div className={styles.team__data}>
+                    <h1>{team.name}</h1>
+                    <h2>Ground: {team.ground}</h2>
+                    <h2>League: {team.league}</h2>
+                    <div className={styles.buttons__container}>
+                        { isOwner() &&
+                            <>
+                                <Button className={styles.action__button} as={Link} to={`/teams/${teamId}/edit`} variant="dark">Edit</Button>
+                                <Button className={styles.action__button} onClick={clickDeleteBtnHandler} variant="danger">Delete</Button>
+                            </>
+                        }
+                        <Button className={styles.action__button} variant="success" onClick={toggleSquadList}>Squad List</Button>
+                        {showSquad && <TeamSquadList teamOwnerId={team._ownerId} teamId={teamId} />}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {showDelete && <DeleteConfirmationModal
+            itemId={teamId}
+            itemName={team.name}
+            closeHandler={closeDeleteModal}
+            confirmHandler={deleteTeamHandler}
+        />}
         </>
     );
 }

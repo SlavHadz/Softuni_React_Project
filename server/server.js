@@ -1347,7 +1347,8 @@
                 league: "Australian A-League",
                 mainImage: "https://backend.wellingtonphoenix.com/wp-content/uploads/sites/11/2017/09/xekp4b9zfszh1qp19p743s3mp.jpg",
                 teamLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Wellington_Phoenix_FC_logo.svg/800px-Wellington_Phoenix_FC_logo.svg.png",
-                _id: "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9"
+                _id: "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9",
+                _createdOn: 1701868217100
             },
             "c0648310-9201-11ee-b9d1-0242ac120002": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1356,7 +1357,8 @@
                 league: "Major League Soccer",
                 mainImage: "https://phantom-marca.unidadeditorial.es/37ff1e724214ec3dd592df649f619236/resize/828/f/jpg/assets/multimedia/imagenes/2023/10/10/16969735691191.jpg",
                 teamLogo: "https://w0.peakpx.com/wallpaper/998/961/HD-wallpaper-inter-miami-cf-soccer-mls-david-beckham-logo-inter-miami-football-team.jpg",
-                _id: "c0648310-9201-11ee-b9d1-0242ac120002"
+                _id: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _createdOn: 1701868411070
             }
         },
         players: {

@@ -3,5 +3,6 @@
     background-color: rgba(0, 0, 0, 0.504);
     background-image: url("../public/img/emilio-garcia-AWdCgDDedH0-unsplash.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     background-blend-mode: darken;
 }
