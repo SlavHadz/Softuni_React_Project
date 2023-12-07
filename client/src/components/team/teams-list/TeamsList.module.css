@@ -1,0 +1,19 @@
+@import url('../../../../public/css/constants.css');
+
+.list__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.teams__table {
+    width: 800px;
+    min-height: 60vh;
+    border-radius: 5px;
+    background-color: rgb(54, 48, 48, 0.45);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}

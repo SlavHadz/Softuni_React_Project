@@ -15,6 +15,7 @@ import CreateTeam from './components/team/create-team/CreateTeam.jsx';
 
 import styles from './App.module.css';
 import AuthGuard from './components/guards/AuthGuard.jsx';
+import TeamSquadList from './components/team/team-squad-list/TeamSquadList.jsx';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/teams' element={<TeamsList />} />
           <Route path='/teams/:teamId/details' element={<TeamDetails />} />
+          <Route path='/teams/:teamId/squad' element={<TeamSquadList />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
 

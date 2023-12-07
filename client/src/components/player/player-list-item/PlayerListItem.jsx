@@ -5,6 +5,9 @@ import PlayerTransferModal from "../player-transfer/PlayerTransferModal.jsx";
 import DeleteConfirmationModal from "../../common/delete-confirmation-modal/DeleteConfirmationModal.jsx";
 import AuthContext from "../../../contexts/authContext.jsx";
 
+import styles from './PlayerListItem.module.css';
+import { Button } from "react-bootstrap";
+
 export default function PlayerListItem({
     playerData
 }) {
@@ -40,14 +43,18 @@ export default function PlayerListItem({
 
     return (
         <>
-            <h1>Name: {firstName} {lastName}</h1>
-            <h2>Position: {position}</h2>
-            { isOwner() &&
-                <>
-                <button onClick={clickDeleteBtnHandler}>Delete</button>
-                <button onClick={clickTransferHandler}>Transfer</button>
-                </>
-            }
+            <tr>
+            <td>{`${playerData.firstName} ${playerData.lastName}`}</td>
+            <td>{playerData.position}</td>
+            <td className={styles.actions__cell}>
+                { isOwner() &&
+                    <>
+                        <Button className={styles.action__button} onClick={clickDeleteBtnHandler} variant="danger">Delete</Button>
+                        <Button className={styles.action__button} onClick={clickTransferHandler} variant="info">Transfer</Button>
+                    </>
+                }
+            </td>
+            </tr>
 
             {showTransfer && <PlayerTransferModal closeModalHandler={closeTransferModalHandler} playerData={playerData} />}
 

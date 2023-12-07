@@ -6,4 +6,5 @@
     color: var(--primary-text-color);
     padding-top: 100px;
     margin-bottom: 150px;
+    text-shadow: 1px 1px black;
 }

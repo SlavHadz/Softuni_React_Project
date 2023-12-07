@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
+import styles from './TeamListItem.module.css';
+import Button from 'react-bootstrap/Button';
+
 export default function TeamListItem({
     teamData
 }) {
     return (
-        <>
-            <h1>Team name:</h1>
-            <div>{teamData.name}</div>
-            <h2>Ground:</h2>
-            <div>{teamData.ground}</div>
-            <Link to={`/teams/${teamData._id}/details`}>Details</Link>
-        </>
+        <div className={styles.item__container}>
+            <div className={styles.team__title}>{teamData.name}</div>
+            <Button as={Link} to={`/teams/${teamData._id}/details`} variant="success">Details</Button>
+        </div>
     );
 }

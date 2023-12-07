@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import * as teamService from '../../../services/teamsService.js';
-import TeamSquadList from "../team-squad-list/TeamSquadList.jsx";
 import DeleteConfirmationModal from "../../common/delete-confirmation-modal/DeleteConfirmationModal.jsx";
 import AuthContext from "../../../contexts/authContext.jsx";
 import styles from "./TeamDetails.module.css";
@@ -13,7 +12,6 @@ export default function TeamDetails() {
     const navigate = useNavigate();
     const { teamId } = useParams();
     const [team, setTeam] = useState({});
-    const [showSquad, setShowSquad] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
     const { userId } = useContext(AuthContext);
 
@@ -34,10 +32,6 @@ export default function TeamDetails() {
 
     function clickDeleteBtnHandler() {
         setShowDelete(true);
-    }
-
-    function toggleSquadList() {
-        setShowSquad(state => !state);
     }
 
     function isOwner() {
@@ -64,8 +58,7 @@ export default function TeamDetails() {
                                 <Button className={styles.action__button} onClick={clickDeleteBtnHandler} variant="danger">Delete</Button>
                             </>
                         }
-                        <Button className={styles.action__button} variant="success" onClick={toggleSquadList}>Squad List</Button>
-                        {showSquad && <TeamSquadList teamOwnerId={team._ownerId} teamId={teamId} />}
+                        <Button as={Link} to={`/teams/${teamId}/squad`} className={styles.action__button} variant="success">Squad List</Button>
                     </div>
                 </div>
             </div>
