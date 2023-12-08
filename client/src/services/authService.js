@@ -12,9 +12,10 @@ export const login = async (email, password) => {
     return token;
 };
 
-export const register = async (email, password) => {
+export const register = async (email, username, password) => {
     const token = await post(registerUrl, {
         email,
+        username,
         password
     });
 

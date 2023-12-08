@@ -20,8 +20,8 @@ export const AuthProvider = ({
     }
 
     const submitRegisterHandler = async (formData) => {
-        const { email, password } = formData;
-        const result = await authService.register(email, password);
+        const { email, username, password } = formData;
+        const result = await authService.register(email, username, password);
         setAuth(result);
         localStorage.setItem('token', result.accessToken);
         navigate('/');
@@ -38,7 +38,8 @@ export const AuthProvider = ({
         submitRegisterHandler,
         logoutHandler,
         isAuthenticated: !!auth.accessToken,
-        userId: auth._id
+        userId: auth._id,
+        username: auth.username
     }
 
     return (

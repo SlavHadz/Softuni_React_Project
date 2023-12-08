@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import AuthContext from '../../contexts/authContext.jsx';
 
 export default function Header() {
-    const {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated, username} = useContext(AuthContext);
 
     return (
         <header className={styles.header}>
@@ -32,6 +32,7 @@ export default function Header() {
                             <li className={styles['nav-item']}>               
                                 <Link to={'/logout'} className={styles['nav-link']}>Logout</Link>
                             </li>
+                            <li><p>Hello, {username}</p></li>
                         </>
                         )
                     }

@@ -12,6 +12,7 @@ export default function Register() {
 
     const { formValues, onSubmit, onChange, error } = useForm({
         email: '',
+        username: '',
         password: ''
     }, submitRegisterHandler);
 
@@ -26,6 +27,15 @@ export default function Register() {
                 type="email"
                 placeholder="email" 
                 value={formValues.email} 
+                onChange={onChange} />
+            </Form.Group>
+            <Form.Group className="mb-3">
+            <Form.Label>Username</Form.Label>
+            <Form.Control id="username"
+                name="username" 
+                type="text" 
+                placeholder="username" 
+                value={formValues.username} 
                 onChange={onChange} />
             </Form.Group>
             <Form.Group className="mb-3">
