@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 export default function Register() {
     const { submitRegisterHandler } = useContext(AuthContext);
 
-    const { formValues, onSubmit, onChange } = useForm({
+    const { formValues, onSubmit, onChange, error } = useForm({
         email: '',
         password: ''
     }, submitRegisterHandler);
@@ -37,6 +37,7 @@ export default function Register() {
                 value={formValues.password} 
                 onChange={onChange} />
             </Form.Group>
+            {error && <p className={styles.text__danger}>{error}</p>}
             <Button type="submit">Register</Button>
             </Form>
         </div>

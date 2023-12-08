@@ -10,7 +10,7 @@ export default function PlayerAddModal({
     teamId,
     closeHandler
 }) {
-    const {formValues, onChange, onSubmit} = useForm({
+    const {formValues, onChange, onSubmit, error} = useForm({
         firstName: '',
         lastName: '',
         position: ''
@@ -38,6 +38,7 @@ export default function PlayerAddModal({
                         <Form.Label>Position</Form.Label>
                         <Form.Control name="position" type="text" value={formValues.position} onChange={onChange}/>
                     </Form.Group>
+                    {error && <p className={styles.text__danger}>{error}</p>}
                     <div className={styles.btn__container}>
                         <Button type="submit" variant="success">Create</Button>
                         <Button onClick={closeHandler} variant="light">Cancel</Button>

@@ -16,7 +16,7 @@ export default function CreateTeam() {
         navigate('/teams');
     }
 
-    const {formValues, onSubmit, onChange} = useForm({
+    const {formValues, onSubmit, onChange, error} = useForm({
         name: '',
         ground: '',
         league: '',
@@ -47,6 +47,7 @@ export default function CreateTeam() {
                     <Form.Label>Team Logo</Form.Label>
                     <Form.Control type="text" name="teamLogo" value={formValues.teamLogo} onChange={onChange}/>
                 </Form.Group>
+                {error && <p className={styles.text__danger}>{error}</p>}
                 <Button className={styles.btn__submit} type="submit">Create</Button>
             </Form>
         </div>

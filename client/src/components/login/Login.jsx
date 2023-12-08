@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 export default function Login() {
     const { submitLoginHandler } = useContext(AuthContext);
 
-    const {formValues, onSubmit, onChange} = useForm({
+    const {formValues, onSubmit, onChange, error} = useForm({
         email: '',
         password: ''
     }, submitLoginHandler);
@@ -37,6 +37,7 @@ export default function Login() {
             value={formValues.password} 
             onChange={onChange} />
          </Form.Group>
+        {error && <p className={styles.text__danger}>{error}</p>}
          <Button type="submit">Login</Button>
         </Form>
         </div>

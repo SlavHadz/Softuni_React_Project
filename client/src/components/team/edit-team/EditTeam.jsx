@@ -19,7 +19,7 @@ export default function EditTeam() {
         navigate('/teams');
     }
  
-    const {formValues, setFormValues, onSubmit, onChange} = useForm({
+    const {formValues, setFormValues, onSubmit, onChange, error} = useForm({
         name: '',
         ground: '',
         league: '',
@@ -58,6 +58,7 @@ export default function EditTeam() {
                     <Form.Label>Team Logo</Form.Label>
                     <Form.Control type="text" name="teamLogo" value={formValues.teamLogo} onChange={onChange}/>
                 </Form.Group>
+                {error && <p className={styles.text__danger}>{error}</p>}
                 <Button className={styles.btn__submit} type="submit">Edit</Button>
             </Form>
         </div>

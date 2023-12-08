@@ -5,11 +5,17 @@ export default function useForm(
     submitHandler
 ) {
     const [formValues, setFormValues] = useState(initialValues);
+    const [error, setError] = useState();
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
-        submitHandler(formValues);
+        try {
+            await submitHandler(formValues);
+            setError(null);
+        } catch (error) {
+            setError(error.message);
+        }
     }
 
     const onChange = (e) => {
@@ -21,6 +27,7 @@ export default function useForm(
 
     return {
         formValues,
+        error,
         setFormValues,
         onSubmit,
         onChange

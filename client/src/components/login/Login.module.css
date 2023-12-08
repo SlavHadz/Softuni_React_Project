@@ -11,3 +11,8 @@
     font-size: 20px;
     color: white;
 }
+
+.text__danger {
+    color: red;
+    font-size: 16px;
+}
