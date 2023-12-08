@@ -12,6 +12,7 @@ import TeamDetails from './components/team/team-details/TeamDetails.jsx';
 import EditTeam from './components/team/edit-team/EditTeam.jsx';
 import TeamsList from './components/team/teams-list/TeamsList.jsx';
 import CreateTeam from './components/team/create-team/CreateTeam.jsx';
+import Page404 from './components/404/404.jsx';
 
 import styles from './App.module.css';
 import AuthGuard from './components/guards/AuthGuard.jsx';
@@ -36,6 +37,8 @@ function App() {
             <Route path='/teams/:teamId/edit' element={<EditTeam />} />
             <Route path='/logout' element={<Logout />} />
           </Route>
+          
+          <Route path='*' element={<Page404 />} />
         </Routes>
       </div>
       <Footer />
