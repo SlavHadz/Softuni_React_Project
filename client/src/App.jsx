@@ -17,6 +17,7 @@ import Page404 from './components/404/404.jsx';
 import styles from './App.module.css';
 import AuthGuard from './components/guards/AuthGuard.jsx';
 import TeamSquadList from './components/team/team-squad-list/TeamSquadList.jsx';
+import About from './components/about/About.jsx';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/teams' element={<TeamsList />} />
           <Route path='/teams/:teamId/details' element={<TeamDetails />} />
           <Route path='/teams/:teamId/squad' element={<TeamSquadList />} />
+          <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
 

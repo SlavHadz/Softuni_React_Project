@@ -1,0 +1,19 @@
+@import url('../../../public/css/constants.css');
+
+.about__container {
+    text-align: center;
+    padding: 50px 200px;
+    color: var(--primary-text-color);
+}
+
+.about__modal {
+    border: 1px solid black;
+    min-height: 400px;
+    background-color: rgb(54, 48, 48, 0.6);
+    border-radius: 5px;
+    padding: 30px 50px;
+}
+
+.about__heading {
+    margin-bottom: 50px;
+}
