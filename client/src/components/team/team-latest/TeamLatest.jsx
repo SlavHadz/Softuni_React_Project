@@ -12,6 +12,10 @@ export default function TeamLatest() {
     useEffect(() => {
         teamsService.getAll()
         .then(teams => {
+            if(teams.length === 0) {
+                setLatest(null);
+                return;
+            }
             const latestTeam = teams.slice(-1);
             setLatest(latestTeam[0]);
         });
@@ -20,7 +24,9 @@ export default function TeamLatest() {
     return (
         <div className={styles.latest__container}>
             <h3 className={styles.latest__title}>Latest team</h3>
-            <div className={styles.card}>
+            {
+                latest && 
+                <div className={styles.card}>
                 <div className={styles.card__thumbnail}>
                     <img src={latest.teamLogo} className={styles.thumbnail__img} />
                 </div>
@@ -31,7 +37,9 @@ export default function TeamLatest() {
                     className={styles.card__button} 
                     variant="dark"
                 >Details</Button>
-            </div>
+                </div>
+            }
+            {!latest && <p className={styles.fallback__text}>No teams added yet</p>}
         </div>
     );
 }

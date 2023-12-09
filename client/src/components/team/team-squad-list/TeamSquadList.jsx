@@ -59,7 +59,7 @@ export default function TeamSquadList() {
                         </tbody>
                     </Table>
                 </div>
-                {playersList.length === 0 && <p className={styles.fallback__text}>You better start adding players!</p>}
+                {playersList.length === 0 && <p className={styles.fallback__text}>No players added yet!</p>}
             </div>
             {
                 isOwner() &&

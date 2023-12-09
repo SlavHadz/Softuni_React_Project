@@ -38,3 +38,10 @@
 .card__button {
     margin-bottom: 15px;
 }
+
+.fallback__text {
+    color: var(--primary-text-color);
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}

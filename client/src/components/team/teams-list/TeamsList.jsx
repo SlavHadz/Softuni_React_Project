@@ -18,6 +18,7 @@ export default function TeamsList() {
         <div className={styles.list__container}>
             <div className={styles.teams__table}>
                 {teams.map(team => (<TeamListItem key={team._id} teamData={team} />))}
+                {teams.length === 0 && <p className={styles.teams__text}>No teams added yet!</p>}
             </div>
         </div>
     );
