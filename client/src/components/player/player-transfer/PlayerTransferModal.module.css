@@ -31,6 +31,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     min-height: 100%;
+    background-color: rgb(191, 255, 216) !important;
 }
 
 .player__title {

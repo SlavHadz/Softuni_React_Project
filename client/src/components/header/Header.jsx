@@ -8,31 +8,50 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles['logo-container']}>
-                <img src='./img/Logo.png' />
+            <div>
+                <Link className={styles.nav__link} to={'/'}>Home</Link>
+                <Link className={styles.nav__link} to={'/teams'}>Teams</Link>
+                <Link className={styles.nav__link} to={'/about'}>About</Link>
+                {
+                    isAuthenticated &&
+                    <Link className={styles.nav__link} as={Link} to={'/teams/create'}>Create Team</Link>
+                }
             </div>
-            <nav className={styles.nav}>
-                <ul className={styles['nav-list']}>
-                    <li className={styles['nav-item']}>
-                        <Link to={'/'} className={styles['nav-link']}>Home</Link>                       
-                    </li>
-                    <li className={styles['nav-item']}>
-                        <Link to={'/teams'} className={styles['nav-link']}>Teams</Link>                        
-                    </li>
-                    <li className={styles['nav-item']}>                        
-                        <Link to={'/about'} className={styles['nav-link']}>About</Link>
-                    </li>
+            <div>
+                {
+                    isAuthenticated &&
+                    (
+                    <>
+                        <Link className={styles.nav__link} as={Link} to={'/logout'}>Logout</Link>
+                        <p className={styles.nav__text}>Hello, {username}</p>
+                    </>
+                    )
+                }
+                {
+                    !isAuthenticated &&
+                    (
+                    <>
+                        <Link className={styles.nav__link} as={Link} to={'/register'}>Register</Link>
+                        <Link className={styles.nav__link} as={Link} to={'/login'}>Login</Link>
+                    </>
+                    )
+                }
+            </div>
+            {/* <Navbar expand={true} variant="dark" className="bg-dark">
+            <Container>
+                <Navbar.Brand href="#home">FootBase</Navbar.Brand>
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
+                    <Nav.Link as={Link} to={'/teams'}>Teams</Nav.Link>
+                    <Nav.Link as={Link} to={'/about'}>About</Nav.Link>
                     {
                         isAuthenticated &&
                         (
                         <>
-                            <li className={styles['nav-item']}>                        
-                                <Link to={'/teams/create'} className={styles['nav-link']}>Create Team</Link>
-                            </li>
-                            <li className={styles['nav-item']}>               
-                                <Link to={'/logout'} className={styles['nav-link']}>Logout</Link>
-                            </li>
-                            <li><p>Hello, {username}</p></li>
+                            <Nav.Link as={Link} to={'/teams/create'}>Create Team</Nav.Link>
+                            <Nav.Link as={Link} to={'/logout'}>Logout</Nav.Link>
+                            <Navbar.Text>Hello, {username}</Navbar.Text>
                         </>
                         )
                     }
@@ -40,17 +59,15 @@ export default function Header() {
                         !isAuthenticated &&
                         (
                         <>
-                            <li className={styles['nav-item']}>                        
-                                <Link to={'/register'} className={styles['nav-link']}>Register</Link>
-                            </li>
-                            <li className={styles['nav-item']}>                        
-                                <Link to={'/login'} className={styles['nav-link']}>Login</Link>
-                            </li>
+                            <Nav.Link as={Link} to={'/register'}>Register</Nav.Link>
+                            <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
                         </>
                         )
                     }
-                </ul>
-            </nav>
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+            </Navbar> */}
         </header>
     );
 }

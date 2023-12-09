@@ -1,43 +1,28 @@
 @import '../../../public/css/constants.css';
 
 .header {
-    border-bottom: 1px solid black;
     background-color: var(--primary-bg-color);
-    min-height: 4rem;
-}
-
-.logo-container {
-    width: 25%;
-}
-
-.nav {
-    display: block;
-    height: 4rem;
-}
-
-.nav-list {
-    margin: 0;
+    height: 80px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    font-size: 26px;
-    list-style-type: none;
-    height: 100%;
+    padding: 0 50px;
 }
 
-.nav-item {
-    cursor: pointer;
-}
-
-.nav-item:hover {
-    border-bottom: 1px solid rgb(179, 166, 146);
-}
-
-.nav-link:hover {
-    color: rgb(179, 166, 146);
-}
-
-.nav-link {
-    color: var(--primary-text-color);
+.nav__link {
+    font-size: 20px;
     text-decoration: none;
+    color: var(--primary-text-color);
+    margin-right: 30px;
+    padding: 5px;
+}
+
+.nav__link:hover {
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.nav__text {
+    display: inline-block;
+    color: var(--primary-text-color);
+    font-size: 20px;
 }

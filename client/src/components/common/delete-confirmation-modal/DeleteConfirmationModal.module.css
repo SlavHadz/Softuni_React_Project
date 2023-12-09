@@ -31,11 +31,13 @@
 
 .modal__text {
     font-size: 20px;
+    background-color: rgb(255, 226, 226) !important;
 }
 
 .button__container {
     display: flex;
     justify-content: space-evenly;
+    background-color: rgb(255, 226, 226) !important;;
 }
 
 .button__container button {
