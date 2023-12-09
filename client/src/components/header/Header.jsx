@@ -9,6 +9,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div>
+                <h3 className={styles.text__logo}>FootBase</h3>
                 <Link className={styles.nav__link} to={'/'}>Home</Link>
                 <Link className={styles.nav__link} to={'/teams'}>Teams</Link>
                 <Link className={styles.nav__link} to={'/about'}>About</Link>

@@ -7,15 +7,16 @@ import AuthContext from "../../../contexts/authContext.jsx";
 
 import styles from './PlayerListItem.module.css';
 import { Button } from "react-bootstrap";
+import PlayerContext from "../../../contexts/playerContext.jsx";
 
 export default function PlayerListItem({
     playerData
 }) {
     const {_id, _ownerId, teamId, firstName, lastName, position} = playerData;
-    const navigate = useNavigate();
     const [showTransfer, setShowTransfer] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
     const { userId } = useContext(AuthContext);
+    const { deletePlayerHandler } = useContext(PlayerContext);
 
     const clickTransferHandler = () => {
         setShowTransfer(true);
@@ -26,9 +27,8 @@ export default function PlayerListItem({
     }
 
     const onDeleteHandler = async (playerId) => {
-        await playerService.deleteById(playerId);
+        await deletePlayerHandler(playerId);
         setShowDelete(false);
-        navigate(`/teams/${teamId}/details`);
     }
 
     const clickDeleteBtnHandler = () => {

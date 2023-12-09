@@ -9,6 +9,12 @@
     padding: 0 50px;
 }
 
+.text__logo {
+    display: inline-block;
+    color: var(--primary-text-color);
+    margin-right: 30px;
+}
+
 .nav__link {
     font-size: 20px;
     text-decoration: none;

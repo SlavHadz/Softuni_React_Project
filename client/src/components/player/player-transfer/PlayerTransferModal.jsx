@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import * as teamsService from '../../../services/teamsService.js';
 import * as playerService from '../../../services/playerService.js';
 
 import styles from './PlayerTransferModal.module.css';
+import PlayerContext from "../../../contexts/playerContext.jsx";
 
 export default function PlayerTransferModal({
     closeModalHandler,
@@ -11,6 +12,7 @@ export default function PlayerTransferModal({
 }) {
     const [availableTeams, setAvailableTeams] = useState([]);
     const [selectedTeam, setSelectedTeam] = useState("");
+    const { transferPlayerHandler } = useContext(PlayerContext);
 
     useEffect(() => {
         teamsService.getAll()
@@ -24,11 +26,7 @@ export default function PlayerTransferModal({
     const onTransferHandler = async (e) => {
         e.preventDefault();
 
-        const updatedData = {
-            ...playerData,
-            teamId: selectedTeam
-        }
-        await playerService.updatePlayer(playerData._id, updatedData);
+        await transferPlayerHandler(playerData, selectedTeam);
         closeModalHandler();
     }
 

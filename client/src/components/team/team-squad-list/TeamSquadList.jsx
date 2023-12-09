@@ -10,12 +10,13 @@ import AuthContext from "../../../contexts/authContext.jsx";
 import styles from './TeamSquadList.module.css';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import PlayerContext from "../../../contexts/playerContext.jsx";
 
 export default function TeamSquadList() {
     const { teamId } = useParams();
-    const [playersList, setPlayersList] = useState([]);
     const [teamData, setTeamData] = useState({});
     const [showAdd, setShowAdd] = useState(false);
+    const {playersList, setPlayers} = useContext(PlayerContext);
 
     useEffect(() => {
         teamsService.getOne(teamId)
@@ -24,9 +25,9 @@ export default function TeamSquadList() {
         playerService
         .getByTeamId(teamId)
         .then(players => {
-            setPlayersList(players);
+            setPlayers(players);
         });
-    }, [teamId]);
+    }, [teamId, setPlayers]);
 
     const { userId } = useContext(AuthContext);
 

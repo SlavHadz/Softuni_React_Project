@@ -1,24 +1,24 @@
+import { useContext } from "react";
 import useForm from "../../../hooks/useForm.js";
 import * as playerService from '../../../services/playerService.js';
 
 import styles from './PlayerAddModal.module.css';
 
 import { Form, Button } from 'react-bootstrap';
+import PlayerContext from "../../../contexts/playerContext.jsx";
 
 
 export default function PlayerAddModal({
     teamId,
     closeHandler
 }) {
+    const { addPlayerHandler } = useContext(PlayerContext); 
     const {formValues, onChange, onSubmit, error} = useForm({
         firstName: '',
         lastName: '',
         position: ''
     }, async (values) => {
-        await playerService.create({
-            ...values,
-            teamId
-        });
+        await addPlayerHandler(values, teamId);
         closeHandler();
     });
 

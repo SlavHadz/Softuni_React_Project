@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import { AuthProvider } from './contexts/authContext.jsx';
+import { PlayerProvider } from './contexts/playerContext.jsx';
 
 import Footer from './components/footer/Footer.jsx'
 import Header from './components/header/Header.jsx'
@@ -29,7 +30,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/teams' element={<TeamsList />} />
           <Route path='/teams/:teamId/details' element={<TeamDetails />} />
-          <Route path='/teams/:teamId/squad' element={<TeamSquadList />} />
+          <Route element={<PlayerProvider />}>
+            <Route path='/teams/:teamId/squad' element={<TeamSquadList />} />
+          </Route>
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
