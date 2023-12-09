@@ -1352,11 +1352,11 @@
             },
             "c0648310-9201-11ee-b9d1-0242ac120002": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Inter Miami",
-                ground: "Miami Stadium",
-                league: "Major League Soccer",
-                mainImage: "https://phantom-marca.unidadeditorial.es/37ff1e724214ec3dd592df649f619236/resize/828/f/jpg/assets/multimedia/imagenes/2023/10/10/16969735691191.jpg",
-                teamLogo: "https://w0.peakpx.com/wallpaper/998/961/HD-wallpaper-inter-miami-cf-soccer-mls-david-beckham-logo-inter-miami-football-team.jpg",
+                name: "FK Bodø/Glimt",
+                ground: "Aspmyra Stadion",
+                league: "Norwegian Eliteserien",
+                mainImage: "https://i.guim.co.uk/img/media/f0ef41b251bdc95a1892b1dc130f7905b022137c/0_118_3543_2126/master/3543.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=3b64238a455791ec397bdd528d8ec58b",
+                teamLogo: "https://static.vecteezy.com/system/resources/previews/030/485/041/original/bodo-and-glimt-club-logo-symbol-norway-league-football-abstract-design-illustration-with-black-background-free-vector.jpg",
                 _id: "c0648310-9201-11ee-b9d1-0242ac120002",
                 _createdOn: 1701868411070
             }
@@ -1364,20 +1364,68 @@
         players: {
             "f668551c-9149-11ee-b9d1-0242ac120002": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "e968a4ea-0ef0-4699-8d89-b83b1a5d58f9",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
                 _id: "f668551c-9149-11ee-b9d1-0242ac120002",
-                firstName: "Bozhidar",
-                lastName: "Kraev",
-                position: "Forward/Second Striker"
+                firstName: "Julian",
+                lastName: "Lund",
+                position: "Goalkeeper"
             },
-            "f668551c-9149-11ee-basdf-0242ac120002": {
+            "e4c48ab0-cc7c-4e72-9eff-c9530d3b5dcc": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                teamId: "e968a4ea-0123-4699-8d89-b83b1a5d58f9",
-                _id: "f668551c-9149-11ee-basdf-0242ac120002",
-                firstName: "Anton",
-                lastName: "Nedyalkov",
-                position: "Left back"
-            }
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "e4c48ab0-cc7c-4e72-9eff-c9530d3b5dcc",
+                firstName: "Marius",
+                lastName: "Lode",
+                position: "Left Back"
+            },
+            "d017d621-2e42-4543-a40c-196900eebf1e": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "d017d621-2e42-4543-a40c-196900eebf1e",
+                firstName: "Omar",
+                lastName: "Elabdellaoui",
+                position: "Right Back"
+            },
+            "d017d621-2e42-4543-a40c-196900eebf1e": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "d017d621-2e42-4543-a40c-196900eebf1e",
+                firstName: "Odin",
+                lastName: "Bjørtuft",
+                position: "Center Back"
+            },
+            "a37ed4cf-ca3b-4482-a825-a2705adf2d64": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "a37ed4cf-ca3b-4482-a825-a2705adf2d64",
+                firstName: "Brice",
+                lastName: "Wembangomo",
+                position: "Left Back"
+            },
+            "be4316fd-76fb-4b58-9adc-e23d836351c0": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "be4316fd-76fb-4b58-9adc-e23d836351c0",
+                firstName: "Isak",
+                lastName: "Amundsen",
+                position: "Midfielder"
+            },
+            "daa1cca9-676b-4e78-889c-406bf3fe8d59": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "daa1cca9-676b-4e78-889c-406bf3fe8d59",
+                firstName: "Amahl",
+                lastName: "Pellegrino",
+                position: "Left Winger/Forward"
+            },
+            "70018714-41d2-4aca-91f3-7dffa1553672": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                teamId: "c0648310-9201-11ee-b9d1-0242ac120002",
+                _id: "70018714-41d2-4aca-91f3-7dffa1553672",
+                firstName: "Albert",
+                lastName: "Grønbæk",
+                position: "Midfielder"
+            },
         },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
