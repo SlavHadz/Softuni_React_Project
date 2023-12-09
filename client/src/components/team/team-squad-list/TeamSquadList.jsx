@@ -27,7 +27,7 @@ export default function TeamSquadList() {
         .then(players => {
             setPlayers(players);
         });
-    }, [teamId, setPlayers]);
+    }, [teamId]);
 
     const { userId } = useContext(AuthContext);
 

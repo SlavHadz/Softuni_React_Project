@@ -11,12 +11,15 @@ export default function PlayerTransferModal({
     playerData
 }) {
     const [availableTeams, setAvailableTeams] = useState([]);
-    const [selectedTeam, setSelectedTeam] = useState("");
+    const [selectedTeam, setSelectedTeam] = useState();
     const { transferPlayerHandler } = useContext(PlayerContext);
 
     useEffect(() => {
         teamsService.getAll()
-        .then(teams => setAvailableTeams(teams));
+        .then(teams => {
+            setAvailableTeams(teams);
+            setSelectedTeam(teams[0]._id);
+        });
     }, []);
 
     const changeSelectedTeamHandler = (e) => {
@@ -37,7 +40,10 @@ export default function PlayerTransferModal({
                     <div>
                         <h3 className={styles.player__title}>{`${playerData.firstName} ${playerData.lastName}`}</h3>
                         <label>Transfer To:</label>
-                        <select value={selectedTeam} onChange={changeSelectedTeamHandler}>
+                        <select
+                            value={selectedTeam} 
+                            onChange={changeSelectedTeamHandler}
+                        >
                             {availableTeams.map(team => (<option value={team._id} key={team._id}>{team.name}</option>))}
                         </select>
                     </div>
